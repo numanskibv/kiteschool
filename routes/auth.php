@@ -5,13 +5,16 @@ use App\Http\Controllers\Auth\VerifyInviteController;
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 
-Volt::route('register/{invite_code}', VerifyInviteController::class)
-    ->name('register');
-
 Route::middleware('guest')->group(function () {
 
+    Route::get('register/{invite_code}', VerifyInviteController::class)
+        ->name('register-invite');
+
+    Volt::route('register', 'pages.auth.register')
+        ->name('register-invite');
+
     Volt::route('register-invite', 'pages.auth.register-invite')
-        ->name('register.invite');
+        ->name('register-invite');
 
     Volt::route('login', 'pages.auth.login')
         ->name('login');

@@ -3,6 +3,7 @@
 
     Er is een nieuwe uitnodiging aangemaakt voor {{ $invite->email }}.
 
+
     @component('mail::button', ['url' => url('/register/' . $invite->code)])
         Bekijk uitnodiging
     @endcomponent
