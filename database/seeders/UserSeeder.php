@@ -18,15 +18,43 @@ class UserSeeder extends Seeder
         DB::table('users')->insert(
             [
                 [
-                    'name' => 'Admin',
-                    'email' => 'admin@gmails.com',
+                    'name' => 'Terence Olijslager',
+                    'email' => 'terence@windkracht12.nl',
                     'password' => bcrypt('password'),
                     'role' => 'admin',
                     'status' => 'active',
                 ],
                 [
-                    'name' => 'Instructor',
+                    'name' => 'Duco Veenstra',
+                    'email' => 'duco@windkracht12.nl',
+                    'password' => bcrypt('password'),
+                    'role' => 'instructor',
+                    'status' => 'active',
+                ],
+                [
+                    'name' => 'Waldemar van Dongen',
+                    'email' => 'waldermar@windkracht12.nl',
+                    'password' => bcrypt('password'),
+                    'role' => 'instructor',
+                    'status' => 'active',
+                ],
+                [
+                    'name' => 'Ruud Terlingen',
                     'email' => 'instructor@gmails.com',
+                    'password' => bcrypt('password'),
+                    'role' => 'instructor',
+                    'status' => 'active',
+                ],
+                [
+                    'name' => 'Saskia Brink',
+                    'email' => 'saskia@windkracht12.nl ',
+                    'password' => bcrypt('password'),
+                    'role' => 'instructor',
+                    'status' => 'active',
+                ],
+                [
+                    'name' => 'Bernie Vredestein',
+                    'email' => 'bernie@windkracht12.nl',
                     'password' => bcrypt('password'),
                     'role' => 'instructor',
                     'status' => 'active',
