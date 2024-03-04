@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\VerifyInviteController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,15 +17,20 @@ use App\Http\Controllers\Auth\VerifyInviteController;
 
 Route::view('/', 'welcome')->name('welcome');
 
-Route::get('/dashboard', function () {
+Route::get('dashboard', function () {
     $userrole = auth()->user()->role;  // get the role of the user
     return view($userrole . '/dashboard');  // return the dashboard based on the role
 })->middleware(['auth', 'verified'])->name('dashboard');    // middleware to check if the user is authenticated and verified
 
+Route::get('users', [UserController::class, 'index'])
+    ->middleware(['auth', 'verified'])
+    ->name('users.index');
 
-// Route::view('dashboard', 'dashboard')
-//     ->middleware(['auth', 'verified'])
-//     ->name('dashboard');
+Route::get('/verify-invite/{token}', [VerifyInviteController::class, 'verify'])
+    ->name('verify-invite');
+
+
+
 
 Route::view('profile', 'profile')
     ->middleware(['auth'])
